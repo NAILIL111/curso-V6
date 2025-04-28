@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Cursos de Astronomía</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+<!-- Portada -->
+<section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('http://antwrp.gsfc.nasa.gov/apod/image/0701/oriondeepwide_gendler_f.jpg');">
+    <div class="bg-black bg-opacity-50 p-8 rounded-2xl text-center">
+        <img src="https://github.com/NAILIL111/logo-2/blob/main/logo%202.jpg?raw=true" alt="Logo" class="mx-auto mb-4 w-full max-w-md md:max-w-2xl object-contain fade-in">
+        <p class="text-lg md:text-2xl">EN EL COSMOS DE FERNANDO CORREA ENCUENTRAS LO QUE BUSCAS PARA QUE TE ENCUENTRES A TI MISMO</p>
+    </div>
+</section>
+
+<!-- Lista de Cursos -->
+<section class="py-12 px-4 md:px-12">
+    <h2 class="text-4xl font-bold text-center mb-10">Cursos Disponibles</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+        <!-- Cursos -->
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-2">Introducción a la Astronomía</h3>
+            <p>Descubre los fundamentos del universo.</p>
+            <p class="mt-2">Modalidad: Online</p>
+            <p>Duración: 4 semanas</p>
+            <p>Costo: $100</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-2">Observación de Estrellas y Planetas</h3>
+            <p>Aprende a identificar cuerpos celestes con telescopios.</p>
+            <p class="mt-2">Modalidad: Presencial</p>
+            <p>Duración: 6 semanas</p>
+            <p>Costo: $150</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-2">Astrofotografía para Principiantes</h3>
+            <p>Captura imágenes espectaculares del cielo nocturno.</p>
+            <p class="mt-2">Modalidad: Online</p>
+            <p>Duración: 5 semanas</p>
+            <p>Costo: $120</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-2">Cosmología Moderna</h3>
+            <p>Explora el origen y evolución del universo.</p>
+            <p class="mt-2">Modalidad: Presencial</p>
+            <p>Duración: 8 semanas</p>
+            <p>Costo: $200</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-2">Física de Agujeros Negros</h3>
+            <p>Adéntrate en los fenómenos más extremos del cosmos.</p>
+            <p class="mt-2">Modalidad: Online</p>
+            <p>Duración: 6 semanas</p>
+            <p>Costo: $180</p>
+        </div>
+    </div>
+</section>
+
+<!-- Formulario de Inscripción -->
+<section class="py-12 px-4 md:px-12">
+    <h2 class="text-4xl font-bold text-center mb-10">Formulario de Inscripción</h2>
+    <form id="inscripcionForm" class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-2xl shadow-md">
+        <div class="mb-4">
+            <label class="block mb-1">Nombre Completo</label>
+            <input type="text" name="nombre" class="w-full p-2 rounded bg-gray-700" required>
+        </div>
+        <div class="mb-4">
+            <label class="block mb-1">Edad</label>
+            <input type="number" name="edad" class="w-full p-2 rounded bg-gray-700" required>
+        </div>
+        <div class="mb-4">
+            <label class="block mb-1">Correo Electrónico</label>
+            <input type="email" name="correo" class="w-full p-2 rounded bg-gray-700" required>
+        </div>
+        <div class="mb-4">
+            <label class="block mb-1">Número de Teléfono</label>
+            <input type="tel" name="telefono" pattern="\d{10}" maxlength="10" class="w-full p-2 rounded bg-gray-700" required placeholder="10 dígitos">
+        </div>
+        <div class="mb-4">
+            <label class="block mb-1">Curso Seleccionado</label>
+            <select name="curso" class="w-full p-2 rounded bg-gray-700" required>
+                <option value="">--Selecciona un curso--</option>
+                <option>Introducción a la Astronomía</option>
+                <option>Observación de Estrellas y Planetas</option>
+                <option>Astrofotografía para Principiantes</option>
+                <option>Cosmología Moderna</option>
+                <option>Física de Agujeros Negros</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block mb-1">Modalidad</label>
+            <div class="flex space-x-4">
+                <label><input type="radio" name="modalidad" value="Presencial" required> Presencial</label>
+                <label><input type="radio" name="modalidad" value="Online" required> Online</label>
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="block mb-1">Comentarios Adicionales</label>
+            <textarea name="comentarios" class="w-full p-2 rounded bg-gray-700"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">Inscribirme</button>
+    </form>
+</section>
+
+<!-- Mensaje de Confirmación -->
+<div id="mensajeExito" class="fixed top-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-4 rounded-2xl shadow-md hidden">
+    ¡Te has inscrito exitosamente! Te contactaremos pronto.
+</div>
+
+<script>
+    document.getElementById('inscripcionForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbwqkIOnrvtAlrmEtrGKkGku2HvRWF5fkBIkEIxtMuOcVLEMJiTs28IfXWPCAhge6m1Kow/exec', {
+                method: 'POST',
+                body: formData
+            });
+
+            const mensaje = document.getElementById('mensajeExito');
+            mensaje.classList.remove('hidden');
+
+            setTimeout(() => {
+                mensaje.classList.add('hidden');
+                document.getElementById('inscripcionForm').reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 5000);
+
+        } catch (error) {
+            alert('Ocurrió un error al enviar tu inscripción. Inténtalo nuevamente.');
+            console.error(error);
+        }
+    });
+</script>
+
+</body>
+</html>
